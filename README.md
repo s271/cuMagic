@@ -31,23 +31,40 @@ Laws and attack/defense elements available to player and ai are stored in files 
 line “BLACK BLACK YELLOW” correspond to yellow circle in the column - it’s not a low but attack element invoked by clicking on it and place in the field. Same for other 
 ““BLACK BLACK *”” lines
 Available lines for playe (*) mean any color:
+
 * BLACK *
+
 RED ORANGE BLACK
+ 
 YELLOW  RED BLACK
-YELLOW ORANGE BLACK 
-ORANGE RED BLACK 
-RED MAGNETA BLACK 
+
+YELLOW ORANGE BLACK
+ 
+ORANGE RED BLACK
+ 
+RED MAGNETA BLACK
+ 
 BLACK BLACK YELLOW
+
 BLACK BLACK MAGNETA
 
+
 for AI:
+
 * BLACK *
-GREEN VIOLET BLACK 
+
+GREEN VIOLET BLACK
+ 
 BLUE VIOLET BLACK
+
 BLUE JADE BLACK
+
 VIOLET BLUE BLACK
+
 GREEN BLUE BLACK
+
 BLACK BLACK JADE
+
 BLACK BLACK GREEN
  
 cuph_ai_off.exe - AI turned off, switch between green, yellow, Magenta, Jade is by mouse wheel scroll.
