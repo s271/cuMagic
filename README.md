@@ -29,12 +29,12 @@ If connecting element is black law negate previous low with right and left eleme
 
 Laws and attack/defense elements available to player and ai are stored in files stackHum.txt and stackAI.txt
 line “BLACK BLACK YELLOW” correspond to yellow circle in the column - it’s not a low but attack element invoked by clicking on it and place in the field. Same for other 
-" BLACK BLACK * " lines
+" BLACK BLACK _color_ " lines
 Available lines for player
 
-star * mean any color:
+_color_  mean any color:
 
- * BLACK *
+ _color_  BLACK _color_ 
 
 RED ORANGE BLACK
  
@@ -53,7 +53,7 @@ BLACK BLACK MAGNETA
 
 for AI:
 
- * BLACK *
+ _color_  BLACK _color_ 
 
 GREEN VIOLET BLACK
  
