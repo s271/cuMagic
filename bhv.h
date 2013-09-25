@@ -296,4 +296,5 @@ struct ObjInertia
 	float atten1;
 };
 #define MIN_SET_SIZE 3
+//#define MIN_SET_SIZE 6
 #endif

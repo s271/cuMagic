@@ -44,36 +44,30 @@ extern int sizeBlue;
 extern int startRed;
 extern int sizeRed;
 
-void DoBhv()
+void RefillAndActBlue()
 {
-	ObjBhv();
-	
-//return;
-//assume ai is blue
 	if(gActiveSets.statusPickBlue >= 1)
 	{
+		bool green_present = BlueSetTest(-1, 0, P_GREEN);
+		bool jade_present = BlueSetTest(-1, 0, P_JADE);
+
+		if(!jade_present && rand()%4 == 0)
+				gActiveSets.AddBlueBone(&jadeRingElement);
+		else if(!green_present && rand()%4 == 0)
+				gActiveSets.AddBlueBone(&greenBlobElement);
+
 		if(gActiveSets.blueSetSize <= MIN_SET_SIZE)
 		{
-			bool green_present = BlueSetTest(-1, 0, P_GREEN);
-			bool jade_present = BlueSetTest(-1, 0, P_JADE);
-			if(!green_present && !jade_present)
-			{
-				if(rand()%2)
-					gActiveSets.AddBlueBone(&jadeRingElement);
-				else
-					gActiveSets.AddBlueBone(&greenBlobElement);
-			}
-			else
-			{
-				int ind = startBlue + rand()%sizeBlue;
-				gActiveSets.AddBlueBone(gElementPtr[ind]);
-			}
-
+			int ind = startBlue + rand()%sizeBlue;
+			gActiveSets.AddBlueBone(gElementPtr[ind]);
 		}
 		else if(CardsBhv(gActiveSets.blueBoneSet, gActiveSets.blueSetSize) >= 0)
 			gActiveSets.statusPickBlue -= 1;
 	}
+}
 
+void RefillRed()
+{
 	if(gActiveSets.statusPickRed >= 1)
 	{
 		if(gActiveSets.redSetSize <= MIN_SET_SIZE)
@@ -94,10 +88,13 @@ void DoBhv()
 			}
 
 		}
-		else if(CardsBhv(gActiveSets.redBoneSet, gActiveSets.redSetSize) >= 0)
-			gActiveSets.statusPickRed -= 1;
 	}
+}
 
+void DoBhv()
+{
+	ObjBhv();
+	RefillAndActBlue();//assume ai is blue
 }
 
 void ArrayCleanup(BoneSet* boneSet, int& setSize);
@@ -401,7 +398,7 @@ float BlueBlackHeuristic::ConditionScore(){
 
 	bool orange_present = gFiledIntegral.v[P_ORANGE] > 3000; 
 
-	bool orangeBone = BlueSetTest(P_BLUE,  P_ORANGE, P_BLACK);
+	bool orangeBone = RedSetTest(P_RED,  P_ORANGE, P_BLACK);
 
 	if(yellow_present || !orange_present)
 		return 0;

@@ -434,6 +434,7 @@ void CtrlsSinglet::initCtrls()
 #include "bhv.h"
 void InitCardPars(int &vstep , int &hcenter, int &acenter);
 void ArrayCleanup(BoneSet* boneSet, int& setSize);
+void RefillRed();
 
 void clickCtrl(int button, int updown, int x, int y)
 {
@@ -482,6 +483,7 @@ void clickCtrl(int button, int updown, int x, int y)
 		}
 		if(gActiveSets.statusPickRed >= 1)
 		{
+			RefillRed();
 			int vstep;
 			int hcenter;
 			int acenter;
