@@ -51,9 +51,9 @@ void RefillAndActBlue()
 		bool green_present = BlueSetTest(-1, 0, P_GREEN);
 		bool jade_present = BlueSetTest(-1, 0, P_JADE);
 
-		if(!jade_present && rand()%4 == 0)
+		if(!jade_present && rand()%8 == 0)
 				gActiveSets.AddBlueBone(&jadeRingElement);
-		else if(!green_present && rand()%4 == 0)
+		else if(!green_present && rand()%8 == 0)
 				gActiveSets.AddBlueBone(&greenBlobElement);
 
 		if(gActiveSets.blueSetSize <= MIN_SET_SIZE)
