@@ -287,9 +287,9 @@ void ActiveSets::Pick()
 	float sum = red+blue;
 	red /= sum;
 	blue /= sum;
-	statusPickRed += blue*deltaPick;
+	statusPickRed += red*deltaPick;
 	statusPickRed = min(1, statusPickRed);
-	statusPickBlue += red*deltaPick;
+	statusPickBlue += blue*deltaPick;
 	statusPickBlue = min(1, statusPickBlue);
 }
 
